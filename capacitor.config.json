@@ -1,0 +1,12 @@
+{
+  "appId": "com.calculator.average.bac",
+  "appName": "حساب معدل الباك",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false
+    }
+  }
+}

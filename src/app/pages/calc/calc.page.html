@@ -1,0 +1,62 @@
+<ion-header text-center>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="clear()">
+        <ion-icon slot="icon-only" src="../assets/icon/eraser.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="primary">شعبة: <span>{{ arabicBranchName }}</span></ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button text="" icon="arrow-forward" defaultHref="/main" color="primary"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+    <div class="calculations-results">
+      <div class="calculations-row">
+        <div class="calculations-col">
+          <h3 text-center>المعدل</h3>
+          <p text-center>{{ average }}</p>
+        </div>
+        <div class="calculations-col">
+          <div>
+            <h3 text-center>المجموع العام</h3>
+            <p text-center>{{ allMarks }}</p>
+          </div>
+          <div>
+            <h3 text-center>المعاملات</h3>
+            <p text-center>{{ allCoefficients }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</ion-header>
+
+<ion-content text-center no-padding>
+  <ion-grid class="table" no-padding>
+    <ion-row class="table-header">
+      <ion-col>المجموع</ion-col>
+      <ion-col>المعامل</ion-col>
+      <ion-col>النقطة</ion-col>
+      <ion-col>المادة</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let subject of subjects; let i = index">
+      <ion-col class="number">{{ subject.totalMark }}</ion-col>
+      <ion-col class="number">{{ subject.coefficient }}</ion-col>
+      <ion-col id="input-group" no-padding>
+        <div id="validity"></div>
+        <ion-input
+          class="number"
+          no-padding
+          name={{i}}
+          type="number"
+          inputmode="numeric"
+          min="0"
+          max="20"
+          step="0.25"
+          placeholder="00/20"
+          [(value)]="subject.mark"
+          (ionInput)="onCalculateMarks($event.target)"></ion-input>
+      </ion-col>
+      <ion-col class="table-subject">{{ subject.name }}</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

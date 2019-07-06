@@ -1,0 +1,176 @@
+// App Styles
+// ----------------------------------------------------------------------------
+// Put style rules here that you want to apply to the entire application. These
+// styles are for the entire app and not just one component. Additionally, this
+// file can hold Sass mixins, functions, and placeholder classes to be imported
+// and used throughout the application.
+
+/** font **/
+html {
+    font-size: 12px;
+}
+
+@media all and (min-width: 320px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media all and (min-width: 540px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media all and (min-width: 720px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media all and (min-width: 960px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@media all and (min-width: 400px) and (min-height: 720px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media all and (min-width: 600px) and (min-height: 960px) {
+    html {
+        font-size: 23px;
+    }
+}
+
+@media all and (min-width: 800px) and (min-height: 1280px) {
+    html {
+        font-size: 27px;
+    }
+}
+
+/* arabic */
+@font-face {
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(../assets/font/cairo.woff2) format('truetype');
+    unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
+}
+
+ion-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* calcPage input */
+input {
+    height: 100% !important;
+}
+
+/* slides */
+.swiper-pagination {
+    margin-bottom: 20px;
+    .swiper-pagination-bullet {
+        background: #000000;
+    }
+    .swiper-pagination-bullet-active {
+        background: var(--ion-background-color);
+    }
+}
+
+@media all and (min-width: 600px) and (min-height: 960px) {
+    .swiper-pagination {
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            margin: 0 8px !important;
+        }
+    }
+}
+
+@media all and (min-width: 800px) and (min-height: 1280px) {
+    .swiper-pagination {
+        .swiper-pagination-bullet {
+            width: 15px;
+            height: 15px;
+            margin: 0 15px !important;
+        }
+    }
+}
+
+app-root[data-theme="dark"] {
+
+    /** primary **/
+    --ion-color-primary: #efefef;
+    --ion-color-primary-rgb: 239,239,239;
+    --ion-color-primary-contrast: #000000;
+    --ion-color-primary-contrast-rgb: 0,0,0;
+    --ion-color-primary-shade: #d2d2d2;
+    --ion-color-primary-tint: #f1f1f1;
+
+    /** secondary **/
+    --ion-color-secondary: #1e1e1e;
+    --ion-color-secondary-rgb: 30,30,30;
+    --ion-color-secondary-contrast: #ffffff;
+    --ion-color-secondary-contrast-rgb: 255,255,255;
+    --ion-color-secondary-shade: #1a1a1a;
+    --ion-color-secondary-tint: #353535;
+
+    --ion-background-color: #121212;
+    --ion-background-color-rgb: 18,18,18;
+
+    --ion-text-color: #ffffff;
+    --ion-text-color-rgb: 255,255,255;
+
+    --ion-color-step-50: #1e1e1e;
+    --ion-color-step-100: #2a2a2a;
+    --ion-color-step-150: #363636;
+    --ion-color-step-200: #414141;
+    --ion-color-step-250: #4d4d4d;
+    --ion-color-step-300: #595959;
+    --ion-color-step-350: #656565;
+    --ion-color-step-400: #717171;
+    --ion-color-step-450: #7d7d7d;
+    --ion-color-step-500: #898989;
+    --ion-color-step-550: #949494;
+    --ion-color-step-600: #a0a0a0;
+    --ion-color-step-650: #acacac;
+    --ion-color-step-700: #b8b8b8;
+    --ion-color-step-750: #c4c4c4;
+    --ion-color-step-800: #d0d0d0;
+    --ion-color-step-850: #dbdbdb;
+    --ion-color-step-900: #e7e7e7;
+    --ion-color-step-950: #f3f3f3;
+
+    /* calcPage */
+    ion-header {
+        ion-title {
+            span {
+                background-color: var(--ion-color-secondary) !important;
+                color: var(--ion-color-primary) !important;
+            }
+        }
+    }
+
+    .calculations-results {
+        .calculations-row {
+            .calculations-col {
+                background-color: var(--ion-color-secondary) !important;
+                color: var(--ion-color-primary) !important;
+                &:last-of-type {
+                    background-color: var(--ion-background-color) !important;
+                }
+            }
+        }
+    }
+
+    .table {ion-row {
+        border-color: #333 !important;
+        background-color: var(--ion-color-secondary) !important;
+    }}
+}

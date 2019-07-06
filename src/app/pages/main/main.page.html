@@ -1,0 +1,71 @@
+<ion-header text-center>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button color="light" (click)="changeTheme()">
+        <ion-icon slot="icon-only" name="moon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button color="light" (click)="showInfo()">
+        <ion-icon slot="icon-only" name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>حساب معدل الباك</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="optional-subjects">
+    <div class="input-group">
+      <input
+        id="amazigh"
+        name="amazigh"
+        type="checkbox"
+        [checked]="optionalSubjectsCheck.amazigh"
+        (click)="updateCheck($event)" />
+      <label for="amazigh">هل أنت معني باللغة الأمازيغية؟</label>
+    </div>
+    <div class="input-group">
+      <input
+        id="sport"
+        name="sport"
+        type="checkbox"
+        [checked]="optionalSubjectsCheck.sport"
+        (click)="updateCheck($event)" />
+      <label for="sport">هل أنت معني بالتربية البدنية؟</label>
+    </div>
+  </div>
+  <ul class="branches">
+    <li
+      class="branch ion-activatable"
+      *ngFor="let branchName of branchNames"
+      [routerLink]="['/calc', branchName[0]]"
+      routerDirection="forward"
+      text-center>
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-icon [src]="branchName[2]"></ion-icon>
+        <p>{{ branchName[1] }}</p>
+    </li>
+  </ul>
+</ion-content>
+
+<ion-content id="slides">
+  <ion-slides pager [options]="slidesOptions">
+    <ion-slide>
+      <ion-icon name="checkmark-circle-outline"></ion-icon>
+      <h1>مواد ثانوية</h1>
+      <p>قم بتعيين اللغة الأمازيغية أو التربية البدنية كمواد اختيارية</p>
+    </ion-slide>
+    <ion-slide>
+      <ion-icon name="albums"></ion-icon>
+      <h1>إختر شعبتك</h1>
+      <p>قم باختيار شعبتك من بين 6 شعب حسب نظام بكالوريا الدولة الجزائرية</p>
+    </ion-slide>
+    <ion-slide>
+      <ion-icon name="calculator"></ion-icon>
+      <h1>أحسب معدلك</h1>
+      <p>إملأ خانات النقاط و سيقوم التطبيق بحساب معدلك آليا</p>
+    </ion-slide>
+  </ion-slides>
+  <button (click)="skipSlides()" id="skip">إبدأ</button>
+</ion-content>

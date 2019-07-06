@@ -1,0 +1,7 @@
+{
+  "name": "حساب معدل الباك",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
